@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import scipy.stats as stats
 
 st.title('Удобный инструмент для планирования трудоемкости')
 st.image("https://lh3.google.com/u/0/d/1N_hl7gRTc_IBeoVc0lbgnXzsbkoNtMX1=w1318-h644-iv1")
