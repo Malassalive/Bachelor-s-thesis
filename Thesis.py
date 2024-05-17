@@ -43,7 +43,6 @@ st.data_editor(X_test,num_rows=1)
 
 model = pd.read_pickle('https://github.com/Malassalive/Bachelor-s-thesis/raw/main/model%20(3).pickle')
 
-import time
 
 st.divider()
 
@@ -53,7 +52,6 @@ if (st.button('Узнать ответ')):
     st.text('Полученные нами данные')
     st.dataframe(X_test)
     st.image('https://lh3.google.com/u/0/d/1vCK2EGGMMLtszAl7FpBJNbqaSEok0zDc=w1318-h644') 
-    time.sleep(5)
     st.divider()
     answer = str(model.predict(X_test).round(0))
     st.write('Проектирование приблизительно займет', answer, ' часа')
