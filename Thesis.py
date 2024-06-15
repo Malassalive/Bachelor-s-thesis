@@ -46,7 +46,7 @@ model = pd.read_pickle('https://github.com/Malassalive/Bachelor-s-thesis/raw/mai
 
 st.divider()
 
-st.header('Теперь нажимайте на кнопку ниже!')
+st.header('Now hit the button below!')
 st.text('A fortuneteller button')
 if (st.button('Answer')):
     st.text('We recieved')
