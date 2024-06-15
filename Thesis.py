@@ -14,30 +14,30 @@ building = st.sidebar.selectbox("Projecting building",["Аэротенк","Ка�
 st.header('Projectiong data')
 st.text('Inputs for the calculations of labor costs')
 col1,col2, col3, col4 = st.columns(4)
-df1 = pd.DataFrame({'А4':[col1.number_input('А4 Sheets',0,100)],
-                    'A3':[col2.number_input('А3 Sheets',0,100)],
-                    'A2':[col3.number_input('А2 Sheets',0,100)],
-                    'A1':[col4.number_input('А1 Sheets',0,100)]
+df1 = pd.DataFrame({'А4':[col1.number_input('Количество листов А4',0,100)],
+                    'A3':[col2.number_input('Количество листов А3',0,100)],
+                    'A2':[col3.number_input('Количество листов А2',0,100)],
+                    'A1':[col4.number_input('Количество листов А1',0,100)]
                     })
 
 st.text('Check your data')
-df = pd.DataFrame({'Experience':[experience],'Department':[department],"Building":[building]})
+df = pd.DataFrame({'Стаж':[experience],'Отдел':[department],"Строение":[building]})
 
 X_not_edited = pd.concat([df,df1], sort=False, axis =1)
 st.data_editor(df1,num_rows=1)
 st.data_editor(X_not_edited,num_rows=1)
 
-departmentID = pd.DataFrame({"Department":["АСО","ВиВ","ОВиК"],
-                             "Value":[0.6,0.08,0.11]})
-buildingID = pd.DataFrame({"Building":["Аэротенк","Камера сбора осадка","Буферный резервуар","Здание решеток","Воздуходувная станция","Отстойник","Резервуар-усреднитель","НСВИ","Цех обработки осадка","АБК","Мехочистка","Реагентное хозяйство ФК"],
-                           "Difficulty":[.05,.01,.01,.1,.12,.02,.01,.07,.32,.1,.07,.1]})
+departmentID = pd.DataFrame({"Отдел":["АСО","ВиВ","ОВиК"],
+                             "Значение":[0.6,0.08,0.11]})
+buildingID = pd.DataFrame({"Строение":["Аэротенк","Камера сбора осадка","Буферный резервуар","Здание решеток","Воздуходувная станция","Отстойник","Резервуар-усреднитель","НСВИ","Цех обработки осадка","АБК","Мехочистка","Реагентное хозяйство ФК"],
+                           "Сложность":[.05,.01,.01,.1,.12,.02,.01,.07,.32,.1,.07,.1]})
 
-dep = departmentID["Value"].iloc[int(departmentID[departmentID["Department"]==department].index[0])]
+dep = departmentID["Значение"].iloc[int(departmentID[departmentID["Отдел"]==department].index[0])]
 
-bui = buildingID["Difficulty"].iloc[int(buildingID[buildingID["Building"]==building].index[0])]
+bui = buildingID["Сложность"].iloc[int(buildingID[buildingID["Строение"]==building].index[0])]
 
 
-df_edited = pd.DataFrame({"Building":[bui],'Department':[dep],'Experience':[experience],})
+df_edited = pd.DataFrame({"Строение":[bui],'Отдел':[dep],'Стаж':[experience],})
 X_test = pd.concat([df_edited,df1], sort=False, axis =1)
 st.data_editor(X_test,num_rows=1)
 
