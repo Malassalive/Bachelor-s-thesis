@@ -11,7 +11,7 @@ experience = st.sidebar.number_input('Working experince',0,100)
 department = st.sidebar.selectbox('Department',['АСО','ВиВ','ОВиК'])
 building = st.sidebar.selectbox("Projecting building",["Аэротенк","Камера сбора осадка","Буферный резервуар","Здание решеток","Воздуходувная станция","Отстойник","Резервуар-усреднитель","НСВИ","Цех обработки осадка","АБК","Мехочистка","Реагентное хозяйство ФК"])
 
-st.header('Projectiong data')
+st.header('Data for planning')
 st.text('Inputs for the calculations of labor costs')
 col1,col2, col3, col4 = st.columns(4)
 df1 = pd.DataFrame({'А4':[col1.number_input('Количество листов А4',0,100)],
