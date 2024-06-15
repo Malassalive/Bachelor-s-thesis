@@ -4,7 +4,7 @@ import numpy as np
 
 st.title('A convenient tool for planning labor costs')
 st.image("https://lh3.google.com/u/0/d/1N_hl7gRTc_IBeoVc0lbgnXzsbkoNtMX1=w1318-h644-iv1")
-st.header('This version is only a demonostrate, the results are not reliable')
+st.header('This version is only a mvp, the results are not reliable')
 st.divider()
 st.sidebar.header('Information about the employee')
 experience = st.sidebar.number_input('Working experince',0,100)
